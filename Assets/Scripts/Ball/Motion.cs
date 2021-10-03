@@ -35,20 +35,15 @@ namespace Ball
         }
         private void PlayerInput()
         {
-            // if (Input.GetKeyDown(jumpKey))//Input.touchCount > 0)
-            // {
-                // Touch touch = Input.GetTouch(0);
-
-                if (Input.GetKey(jumpKey))//touch.phase == TouchPhase.Stationary)
-                {
-                    jumpValue += IncrementValue(jumpValue, jumpMaxValue, jumpIncrementSpeed);
-                    speedValue += IncrementValue(speedValue, speedMaxValue, speedIncrementSpeed);
-                }
-                else if (Input.GetKeyUp(jumpKey))//touch.phase == TouchPhase.Ended)
-                {
-                    JumpLogic();
-                }
-            // }
+            if (Input.GetKey(jumpKey))
+            {
+                jumpValue += IncrementValue(jumpValue, jumpMaxValue, jumpIncrementSpeed);
+                speedValue += IncrementValue(speedValue, speedMaxValue, speedIncrementSpeed);
+            }
+            else if (Input.GetKeyUp(jumpKey))
+            {
+                JumpLogic();
+            }
         }
         private void JumpLogic()
         {
