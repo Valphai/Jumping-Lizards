@@ -26,20 +26,28 @@ namespace UI
         }
         public void Push(GameObject panel)
         {
-            uiStack.Push(panel);
-            ToggleStackActivity(true);
+            if (!uiStack.Contains(panel))
+            {
+                uiStack.Push(panel);
+                ToggleStackActivity(true);
+            }
         }
         public void PopAll()
         {
             ToggleStackActivity(false);
             uiStack.Clear();
         } 
-        public void Pop() => uiStack.Pop();
+        public void Pop()
+        {
+            ToggleStackActivity(true);
+            uiStack.Pop();
+        }
         private void ToggleStackActivity(bool active)
         {
             foreach (GameObject panel in uiStack)
             {
                 panel.SetActive(active);
+                panel.GetComponentInChildren<ButtonTween>()?.Perform();
             }
         }
         public void StartButton() => GameManager.RestartGame();
