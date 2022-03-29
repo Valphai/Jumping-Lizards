@@ -6,7 +6,7 @@ https://chocolate4.itch.io/jumping-lizards
 
 # Controls
 
-Press space to jump, Thats it!
+Press and hold space to jump, Thats it!
 
 # Credits
 
