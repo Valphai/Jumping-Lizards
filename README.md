@@ -4,6 +4,8 @@ A small hyper casual game
 
 https://chocolate4.itch.io/jumping-lizards
 
+![](Assets/Imports/gameplay.gif)
+
 # Controls
 
 Press and hold space to jump, Thats it!
